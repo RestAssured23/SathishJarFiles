@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression_Testing]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Get_API(failed)">
+    <classes>
+      <class name="org.example.Regression.Redeem">
+        <methods>
+          <include name="Redeem_API"/>
+          <include name="Verify_OTP"/>
+        </methods>
+      </class> <!-- org.example.Regression.Redeem -->
+    </classes>
+  </test> <!-- Get_API(failed) -->
+</suite> <!-- Failed suite [Regression_Testing] -->
