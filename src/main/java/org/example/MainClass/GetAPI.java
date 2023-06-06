@@ -14,9 +14,8 @@ public class GetAPI {
         TestNG runner = new TestNG();
         List<String> xmlfile = new ArrayList<String>();
 
-        xmlfile.add(System.getProperty("user.dir") + "\\src\\main\\testdata\\Test.xml");
+        xmlfile.add(System.getProperty("user.dir") + "\\src\\main\\testdata\\GetAPI.xml");
 
-        // xmlfile.add("C:\\Users\\Fi-User\\IdeaProjects\\APIAutomation\\src\\main\\testdata\\primaryID.xml");
         runner.setTestSuites(xmlfile);
         runner.run();
 

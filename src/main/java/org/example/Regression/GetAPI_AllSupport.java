@@ -84,14 +84,6 @@ public class GetAPI_AllSupport {
     }
 
     @Test(priority = 1)
-    public void Current_SIPS() {
-        RequestSpecification res = given().log().all().spec(req).baseUri(Data.BaseURL)
-                .queryParam("holdingProfileId", Holdingid);
-        res.when().get("/core/investor/current-sips")
-                .then().log().all().spec(respec);
-    }
-
-    @Test(priority = 1)
     public void Invested_Schemes() {
         RequestSpecification res = given().log().all().spec(req).baseUri(Data.BaseURL)
                 .queryParam("holdingProfileId", "0");

@@ -39,8 +39,8 @@ public class Switch {
             .expectStatusCode(200)
             .expectContentType(ContentType.JSON).build();
 
-    String Holdingid, InvestorId, folio, otp_refid, dbotp, DB_refid, qref_id, RT_refno,Source_SchemeName;
-    String goalid, goalname, schemcode, schemename, unintsformat, dividendoption, option, bankid, minunitformat, minuamountformat;
+    String Holdingid, InvestorId, folio, otp_refid, dbotp, DB_refid,  RT_refno,Source_SchemeName;
+    String goalid, goalname, bankid;
     double minamount, units, minunit, currentamount,Total_units;
     String fromschemename, fromschemecode, fromoption,   toschemename, toschemcode, tooption,AMC_Name, AMC_Code;
 

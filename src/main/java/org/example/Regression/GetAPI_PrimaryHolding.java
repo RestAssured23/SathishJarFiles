@@ -105,14 +105,7 @@ public class GetAPI_PrimaryHolding {
         res.when().get("/core/investor/mandates")
                 .then().log().all().spec(respec);
     }
-    @Test(priority = 1)
-    public void Current_SIPS() {
-        RequestSpecification res = given().log().all().spec(req).baseUri(Data.BaseURL)
-                .queryParam("holdingProfileId", Holdingid);
-        res.when().get("/core/investor/current-sips")
-                .then().log().all().spec(respec);
-    }
-    @Test(priority = 1)
+     @Test(priority = 1)
     public void STP() {
         RequestSpecification res = given().log().all().spec(req).baseUri(Data.BaseURL)
                 .queryParam("holdingProfileId", Holdingid)

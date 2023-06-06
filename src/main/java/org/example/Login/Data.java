@@ -98,9 +98,13 @@ public class Data {
         XSSFWorkbook wb = new XSSFWorkbook(fis);
         XSSFSheet sheet1 = wb.getSheetAt(0);
 
-        Redeem_Folio= sheet1.getRow(24).getCell(1).getStringCellValue();
+        Switch_Units= Double.parseDouble(String.valueOf((int) sheet1.getRow(21).getCell(1).getNumericCellValue()));
 
-        System.out.println(Redeem_Folio);
+        Switch_Amt= Double.parseDouble(String.valueOf((int) sheet1.getRow(22).getCell(1).getNumericCellValue()));
+
+        System.out.println(Switch_Units);
+
+        System.out.println(Switch_Amt);
 
     }
 
