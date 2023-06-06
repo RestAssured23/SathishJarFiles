@@ -100,7 +100,7 @@ public class SWP {
     @Test(priority = 3)
     public void Installment_dates() {
         Map<String,Object> payload=new HashMap<String,Object>();
-        payload.put("installments",Min_Installment);
+        payload.put("installments",Integer.parseInt(Data.SWP_Installment));
         payload.put("frequency","monthly");
         payload.put("feature","SWP");
         payload.put("ecsDate",Integer.parseInt(Data.SWP_Date));

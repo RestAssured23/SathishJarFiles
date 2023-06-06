@@ -40,7 +40,7 @@ public class SWP_Edit {
     public SWP_Edit() throws IOException {
     }
 
-    String otp_refid, dbotp, DB_refid, Swp_ID,folio;   String Edit_StartDate,Edit_EndDate;
+    String otp_refid, dbotp, DB_refid, Swp_ID,folio,swp_delID;   String Edit_StartDate,Edit_EndDate;
     int Edit_EcsDate,Edit_Installments;
     Date sdate,edate;
     @Test
@@ -152,6 +152,27 @@ public class SWP_Edit {
         RequestSpecification res = given().log().all().spec(req).baseUri(Data.BaseURL)
                 .body(payload_Edit);
         res.when().put("/core/investor/current-swps")
+                .then().log().body().spec(respec);
+    }
+    @Test(priority = 7)
+    public void Current_SWP() {
+        RequestSpecification res = given().log().all().spec(req).baseUri(Data.BaseURL)
+                .queryParam("holdingProfileId", Data.HoldID)
+                .queryParam("page", "1")
+                .queryParam("size", "20")
+                .queryParam("revert", true);
+
+        CurrentSWP.Root response=  res.when().get("/core/investor/current-swps")
+                .then().log().body().spec(respec).extract().response().as(CurrentSWP.Root.class);
+        int size=response.getData().getSchemes().size();
+        swp_delID=response.getData().getSchemes().get(size-1).getSwpId();
+        System.out.println(swp_delID);
+    }
+    @Test(priority = 8)
+    public void SWP_Cancel(){
+        RequestSpecification res = given().log().all().spec(req).baseUri(Data.BaseURL)
+                .queryParam("swpId",swp_delID).log().params().log().uri();
+        res.when().delete("/core/investor/current-swps")
                 .then().log().body().spec(respec);
     }
 }
