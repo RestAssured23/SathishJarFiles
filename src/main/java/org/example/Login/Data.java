@@ -17,6 +17,7 @@ import static io.restassured.path.json.JsonPath.given;
 public class Data {
     public static String  Email, password, grandtype, refreshtoken;
     public static double  Switch_Units,Switch_Amt;
+    public static String SWP_Folio,SWP_Amt;
     public static String Switch_Folio,Switch_Targetscheme;
     public static String HoldID,FolioID,BaseURL,Inv_Amount,SchemeSearch,Expected_Scheme,Goal_Name,Switch_TargetScheme;
     public static String Redeem_units=null,Redeem_amt=null,Redeem_Folio;
@@ -73,7 +74,9 @@ public class Data {
 
         Switch_Folio= sheet1.getRow(23).getCell(1).getStringCellValue();
         Switch_TargetScheme=sheet1.getRow(24).getCell(1).getStringCellValue();
-
+//SWP Data
+        SWP_Folio= sheet1.getRow(28).getCell(1).getStringCellValue();
+        SWP_Amt= sheet1.getRow(29).getCell(1).getStringCellValue();
 
         RestAssured.baseURI= BaseURL;
         Signin.Root response=given().log().all()
@@ -95,13 +98,12 @@ public class Data {
         XSSFWorkbook wb = new XSSFWorkbook(fis);
         XSSFSheet sheet1 = wb.getSheetAt(0);
 
-        Switch_Units= Double.parseDouble(String.valueOf((int) sheet1.getRow(21).getCell(1).getNumericCellValue()));
 
-        Switch_Amt= Double.parseDouble(String.valueOf((int) sheet1.getRow(22).getCell(1).getNumericCellValue()));
+        SWP_Folio= sheet1.getRow(28).getCell(1).getStringCellValue();
+        SWP_Amt= sheet1.getRow(29).getCell(1).getStringCellValue();
+        System.out.println(SWP_Folio);
 
-        System.out.println(Switch_Units);
-
-        System.out.println(Switch_Amt);
+        System.out.println(SWP_Amt);
 
     }
 
