@@ -62,7 +62,7 @@ public class Redeem {
     @Test(priority = 1)
     public void InvestedSchem_API() {
         RequestSpecification res = given().log().all().spec(req).baseUri(Data.BaseURL)
-                .queryParam("holdingProfileId", Data.HoldID);
+                .queryParam("holdingProfileId", Holdingid);
         InvestedScheme.Root response = res.when().get("/core/investor/invested-schemes")
                 .then().log().all().spec(respec).extract().response().as(InvestedScheme.Root.class);
         int count = response.getData().size();

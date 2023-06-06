@@ -103,7 +103,7 @@ public class SWP {
         payload.put("installments",Min_Installment);
         payload.put("frequency","monthly");
         payload.put("feature","SWP");
-        payload.put("ecsDate",1);
+        payload.put("ecsDate",Integer.parseInt(Data.SWP_Date));
 
         RequestSpecification res = given().log().all().spec(req).baseUri(Data.BaseURL)
                 .body(payload);

@@ -17,7 +17,7 @@ import static io.restassured.path.json.JsonPath.given;
 public class Data {
     public static String  Email, password, grandtype, refreshtoken;
     public static double  Switch_Units,Switch_Amt;
-    public static String SWP_Folio,SWP_Amt;
+    public static String SWP_Folio,SWP_Amt,SWP_Date,SWP_Installment;
     public static String Switch_Folio,Switch_Targetscheme;
     public static String HoldID,FolioID,BaseURL,Inv_Amount,SchemeSearch,Expected_Scheme,Goal_Name,Switch_TargetScheme;
     public static String Redeem_units=null,Redeem_amt=null,Redeem_Folio;
@@ -77,6 +77,8 @@ public class Data {
 //SWP Data
         SWP_Folio= sheet1.getRow(28).getCell(1).getStringCellValue();
         SWP_Amt= sheet1.getRow(29).getCell(1).getStringCellValue();
+        SWP_Date= sheet1.getRow(30).getCell(1).getStringCellValue();
+        SWP_Installment= sheet1.getRow(31).getCell(1).getStringCellValue();
 
         RestAssured.baseURI= BaseURL;
         Signin.Root response=given().log().all()
