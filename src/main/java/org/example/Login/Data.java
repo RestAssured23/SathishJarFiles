@@ -50,19 +50,18 @@ public class Data {
 
 //Holding and Folio Data
         HoldID= sheet1.getRow(6).getCell(1).getStringCellValue();
-        FolioID=sheet1.getRow(7).getCell(1).getStringCellValue();
+
 
 //Invest More Amount
-        Inv_Amount =String.valueOf((int) sheet1.getRow(8).getCell(1).getNumericCellValue());
-
+        FolioID=sheet1.getRow(8).getCell(1).getStringCellValue();
+        Inv_Amount =String.valueOf((int) sheet1.getRow(9).getCell(1).getNumericCellValue());
         //Scheme_Search
-        SchemeSearch = sheet1.getRow(9).getCell(1).getStringCellValue();
+        SchemeSearch = sheet1.getRow(10).getCell(1).getStringCellValue();
 //Expected_Scheme
-        Expected_Scheme=sheet1.getRow(10).getCell(1).getStringCellValue();
+        Expected_Scheme=sheet1.getRow(11).getCell(1).getStringCellValue();
 //Goal_Name
-        Goal_Name=sheet1.getRow(11).getCell(1).getStringCellValue();
-//Switch_Target_Scheme
-        Switch_TargetScheme=sheet1.getRow(24).getCell(1).getStringCellValue();
+        Goal_Name=sheet1.getRow(12).getCell(1).getStringCellValue();
+
 
 //Redeemtion Data
         Redeem_units= sheet1.getRow(16).getCell(1).getStringCellValue();
@@ -70,12 +69,10 @@ public class Data {
         Redeem_Folio= sheet1.getRow(18).getCell(1).getStringCellValue();
 // Switch Data
         Switch_Units= Double.parseDouble(String.valueOf((int) sheet1.getRow(21).getCell(1).getNumericCellValue()));
-
         Switch_Amt= Double.parseDouble(String.valueOf((int) sheet1.getRow(22).getCell(1).getNumericCellValue()));
-       /* Switch_Units= Integer.parseInt(sheet1.getRow(21).getCell(1).getStringCellValue());
-        Switch_Amt= Integer.parseInt(sheet1.getRow(22).getCell(1).getStringCellValue());*/
+
         Switch_Folio= sheet1.getRow(23).getCell(1).getStringCellValue();
-        Switch_Targetscheme= sheet1.getRow(24).getCell(1).getStringCellValue();
+        Switch_TargetScheme=sheet1.getRow(24).getCell(1).getStringCellValue();
 
 
         RestAssured.baseURI= BaseURL;

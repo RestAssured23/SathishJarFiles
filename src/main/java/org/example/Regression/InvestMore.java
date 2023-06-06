@@ -103,7 +103,7 @@ public class InvestMore {
         data.put("goalId",Goal_ID);
         data.put("schemeCode",Scheme_code);
         data.put("schemeName",Scheme_Name);
-        data.put("amount",1000);
+        data.put("amount",Data.Inv_Amount);
         data.put("sipType","");
         data.put("sipDate",0);
         Scheme_List.add(data);

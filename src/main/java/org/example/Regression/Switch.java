@@ -515,12 +515,12 @@ public class Switch {
                 .queryParam("page", "1")
                 .queryParam("size", "10");
         RecentTransaction.Root response = res.when().get("/core/investor/recent-transactions")
-                .then().spec(respec).extract().response().as(RecentTransaction.Root.class);
+                .then().log().all().spec(respec).extract().response().as(RecentTransaction.Root.class);
         int count = response.getData().size();
-        for (int i = 0; i < count; i++) {
+      for (int i = 0; i < count; i++) {
             for (int j = 0; j < response.getData().get(i).getMf().size(); j++) {
                 for (int k = 0; k < response.getData().get(i).getMf().get(j).getActions().size(); k++) {
-                    if (response.getData().get(i).getMf().get(j).getFolio().equalsIgnoreCase(Data.FolioID) ==
+                    if (response.getData().get(i).getMf().get(j).getFolio().equalsIgnoreCase(Data.Switch_Folio) ==
                             (response.getData().get(i).getMf().get(j).getActions().get(k).equalsIgnoreCase("cancel"))) {
                         RT_refno = response.getData().get(i).getMf().get(j).getReferenceNo();
                         System.out.println(RT_refno);
@@ -529,7 +529,7 @@ public class Switch {
             }
         }
     }
-/*
+
     @Test(priority = 9)
     public void Delete_API() {
         Map<String, String> del = new HashMap<String, String>();
@@ -540,5 +540,5 @@ public class Switch {
                 .body(del);
         can.when().post("/core/investor/recent-transactions")
                 .then().log().all().spec(respec);
-    }*/
+    }
 }
